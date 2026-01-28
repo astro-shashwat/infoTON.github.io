@@ -127,27 +127,37 @@
     <section class="updates-grid">
 
         <!-- CARD 1 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x250" alt="Opportunity Image">
-            <div class="card-content">
-                <div class="title">Summer Research Internship 2026</div>
+<div class="card" data-tags="internship physics paid">
+    <img src="https://via.placeholder.com/400x250" alt="Opportunity Image">
 
-                <div class="tags">
-                    <span class="tag">Internship</span>
-                    <span class="tag">Physics</span>
-                    <span class="tag">Paid</span>
-                </div>
+    <div class="card-content">
 
-                <div class="description">
-                    A 8-week summer research program for undergraduate physics students.
-                </div>
-
-                <div class="meta">
-                    <div class="deadline">Deadline: 15 March 2026</div>
-                    <div class="location">Location: IISc, Bangalore</div>
-                </div>
-            </div>
+        <!-- CLICKABLE TITLE -->
+        <div class="title">
+            <a href="details.html" target="_blank">
+                Summer Research Internship 2026
+            </a>
         </div>
+
+        <!-- CLICKABLE TAGS -->
+        <div class="tags">
+            <span class="tag" onclick="filterByTag('internship')">Internship</span>
+            <span class="tag" onclick="filterByTag('physics')">Physics</span>
+            <span class="tag" onclick="filterByTag('paid')">Paid</span>
+        </div>
+
+        <div class="description">
+            An 8-week summer research program for undergraduate physics students.
+        </div>
+
+        <div class="meta">
+            <div class="deadline">Deadline: 15 March 2026</div>
+            <div class="location">Location: IISc, Bangalore</div>
+        </div>
+
+    </div>
+</div>
+
 
         <!-- CARD 2 -->
         <div class="card">
