@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog — InfoTON</title>
+  <title>InfoTON — your go to info-site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
+    <header class="site-header">
+  <h1 class="logo">Info<span>TON</span></h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="updates.html">UPDATES</a>
+    <a href="opinion.html">Opinion</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
 <body>
 
 <header class="site-header">
@@ -17,10 +27,77 @@
 
 <main class="container">
 
-  <article class="post-card">
-    <h2><a href="post1.html">Welcome to InfoTON</a></h2>
-    <p>My first post introduction goes here...</p>
-  </article>
+  <article class="coming-soon-article">
+  <style>
+    /* Scoped styles: affect ONLY this article */
+    .coming-soon-article {
+      max-width: 720px;
+      margin: 4rem auto;
+      padding: 3rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .coming-soon-article h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .coming-soon-article p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+
+    .coming-soon-article .badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .coming-soon-article .divider {
+      width: 60px;
+      height: 4px;
+      background: #00e0ff;
+      margin: 2rem auto;
+      border-radius: 2px;
+    }
+
+    .coming-soon-article .cta {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+  </style>
+
+  <span class="badge">Coming Soon</span>
+
+  <h1>Something Worth the Wait</h1>
+
+  <div class="divider"></div>
+
+  <p>
+    We’re working behind the scenes on a new article that dives deeper,
+    challenges assumptions, and delivers insights you won’t want to miss.
+    This space will soon be filled with ideas designed to inform, inspire,
+    and spark curiosity.
+  </p>
+
+  <p class="cta">
+    Stay tuned — the next post is on its way.
+  </p>
+</article>
+
 
   <!-- Copy this block for more posts -->
   <!--
@@ -32,8 +109,8 @@
 
 </main>
 
-<footer>
-  <p>© 2026 InfoTON</p>
+ <footer>
+  <p>© 2026 InfoTON • Built with GitHub Pages by Shashwat Srivastava</p>
 </footer>
 
 </body>
