@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <title>InfoTON — your go to info-site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Background Canvas -->
+  <canvas id="particles"></canvas>
+  
+ <!-- HEADER -->
 
 <header class="site-header">
   <h1 class="logo">Info<span>TON</span></h1>
@@ -20,14 +25,30 @@
 </header>
 
 <section class="hero">
-  <h2>Exploring Tech, AI & The Future</h2>
+  <h2 id="hero-title">
+  Exploring <span class="highlight">Tech</span>, AI & The Future
+</h2>
+  <section class="gallery">
+  <a href="blog/ai.html" class="card">
+    <img src="img/ai.jpg">
+    <span>AI & Ethics</span>
+  </a>
+</section>
+
   <p>Simple explanations. Powerful ideas.</p>
   <a class="btn" href="blog.html">Read Blog</a>
 </section>
 
+  <!-- FOOTER -->
+
 <footer>
   <p>© 2026 InfoTON • Built with GitHub Pages by Shashwat Srivastava</p>
 </footer>
+
+   <!-- SCRIPTS -->
+  <script src="js/particles.js"></script>
+<script src="js/wobble.js"></script>
+
 
 </body>
 </html>
