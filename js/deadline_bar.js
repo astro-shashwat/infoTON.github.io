@@ -52,3 +52,81 @@ function updateDeadlines() {
 
 updateDeadlines();
 setInterval(updateDeadlines, 3600000);
+
+function buildTagRibbon() {
+
+  const cards = document.querySelectorAll(".update-card");
+  const ribbon = document.getElementById("tagRibbon");
+
+  const tagCounts = {};
+
+  /* ----- Collect Tags ----- */
+  cards.forEach(card => {
+
+    const tags = card.querySelectorAll(".tag");
+
+    tags.forEach(tag => {
+
+      const tagText = tag.textContent.trim();
+
+      if (!tagCounts[tagText]) {
+        tagCounts[tagText] = 0;
+      }
+
+      tagCounts[tagText]++;
+    });
+  });
+
+  /* ----- Create ALL Button ----- */
+  createRibbonTag("All", cards.length, true);
+
+  /* ----- Create Tag Buttons ----- */
+  Object.keys(tagCounts).forEach(tag => {
+    createRibbonTag(tag, tagCounts[tag]);
+  });
+
+
+  function createRibbonTag(tagName, count, isAll=false) {
+
+    const tagBtn = document.createElement("div");
+    tagBtn.classList.add("ribbon-tag");
+
+    if(isAll) tagBtn.classList.add("active");
+
+    tagBtn.textContent = `${tagName} (${count})`;
+
+    tagBtn.addEventListener("click", () => {
+
+      document.querySelectorAll(".ribbon-tag")
+        .forEach(t => t.classList.remove("active"));
+
+      tagBtn.classList.add("active");
+
+      filterCards(tagName);
+    });
+
+    ribbon.appendChild(tagBtn);
+  }
+
+
+  function filterCards(tagName) {
+
+    cards.forEach(card => {
+
+      if(tagName === "All") {
+        card.style.display = "block";
+        return;
+      }
+
+      const tags = [...card.querySelectorAll(".tag")]
+        .map(t => t.textContent.trim());
+
+      card.style.display =
+        tags.includes(tagName) ? "block" : "none";
+    });
+  }
+
+}
+
+buildTagRibbon();
+
