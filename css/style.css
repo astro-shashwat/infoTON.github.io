@@ -289,3 +289,37 @@ body {
   transition: width 0.6s ease, background 0.6s ease;
 }
 
+.tag-ribbon-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  padding-bottom: 5px;
+}
+
+.tag-ribbon {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  padding: 5px;
+}
+
+.ribbon-tag {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.ribbon-tag:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.ribbon-tag.active {
+  background: linear-gradient(90deg,#00ffcc,#00aaff);
+  color: black;
+  font-weight: 600;
+}
+
