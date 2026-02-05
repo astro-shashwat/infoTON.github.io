@@ -4,8 +4,13 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
 const particles = [];
-const COUNT = 80;
+const COUNT = 100;
 
 class Particle {
   constructor() {
