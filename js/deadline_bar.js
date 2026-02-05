@@ -4,10 +4,15 @@ function updateDeadlines() {
 
   cards.forEach(card => {
 
-    const deadline = new Date(card.dataset.deadline);
     const progress = card.querySelector(".deadline-progress");
     const text = card.querySelector(".deadline-text");
 
+    /* ✅ Default state */
+    progress.style.width = "20%";
+    progress.style.background = "green";
+    text.textContent = "Upcoming";
+
+    const deadline = new Date(card.dataset.deadline);
     const today = new Date();
 
     // Assume listing appears 90 days before deadline
@@ -17,26 +22,31 @@ function updateDeadlines() {
     const total = deadline - startDate;
     const remaining = deadline - today;
 
-    let percent = remaining / total;
-    percent = Math.max(0, Math.min(1, percent));
+    /* If current date is within tracking period */
+    if (today >= startDate && remaining > 0) {
 
-    const progressPercent = (1 - percent) * 100;
+      let percent = remaining / total;
+      percent = Math.max(0, Math.min(1, percent));
 
-    progress.style.width = progressPercent + "%";
+      const progressPercent = (1 - percent) * 100;
+      progress.style.width = progressPercent + "%";
 
-    /* Gradient urgency */
-    const hue = percent * 120;
-    progress.style.background = `hsl(${hue}, 85%, 55%)`;
+      /* Gradient urgency */
+      const hue = percent * 120;
+      progress.style.background = `hsl(${hue}, 85%, 55%)`;
 
-    /* Text display */
-    const daysLeft = Math.ceil(remaining / (1000 * 60 * 60 * 24));
+      const daysLeft = Math.ceil(remaining / (1000 * 60 * 60 * 24));
+      text.textContent = `${daysLeft} days left`;
+    }
 
-    text.textContent =
-      daysLeft > 0
-        ? `${daysLeft} days left`
-        : "Deadline passed";
+    /* Deadline passed */
+    if (remaining <= 0) {
+      progress.style.width = "100%";
+      progress.style.background = "red";
+      text.textContent = "Deadline passed";
+    }
+
   });
-
 }
 
 updateDeadlines();
